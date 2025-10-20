@@ -1,0 +1,6 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://berufsunfähigkeitsversicherung-magdeburg.de/sitemap.xml
+
+
