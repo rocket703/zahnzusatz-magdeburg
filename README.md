@@ -20,7 +20,6 @@ Ziel: Interessenten verständlich informieren und eine **DSGVO-konforme Kontakta
 
 ## 🧩 Verzeichnisstruktur
 
-```text
 /
 ├─ assets/
 │  ├─ css/
@@ -62,40 +61,7 @@ Honeypot-Feld gegen Spam (.hp)
 
 Asynchrones fetch() + Statusmeldungen
 
-Optional: Redirect nach Erfolg
 
-Mini-Snippet
-
-js
-Code kopieren
-fetch("https://api.web3forms.com/submit", {
-  method: "POST",
-  body: new FormData(formEl)
-});
-⚙️ Lokale Entwicklung
-bash
-Code kopieren
-# Repo klonen
-git clone https://github.com/DEINUSERNAME/zahnzusatz-magdeburg.git
-cd zahnzusatz-magdeburg
-
-# (Optional) lokalen Server starten
-# Variante A: VS Code Live Server
-# Variante B: npx serve
-npx serve .
-
-# Dann im Browser öffnen:
-# http://localhost:3000  (oder Port aus der Konsole)
-🔗 Verlinkung zur BU-Microsite
-Beide Projekte verlinken sich gegenseitig (z. B. im Footer):
-
-html
-Code kopieren
-<p>
-  Weitere Beratung:
-  <a href="https://berufsunfähigkeitsversicherung-magdeburg.de/">Berufsunfähigkeitsversicherung</a> |
-  <a href="https://zahnzusatzversicherung-magdeburg.de/">Zahnzusatzversicherung</a>
-</p>
 🧾 Rechtliches
 Impressum & Datenschutz unter /impressum/ und /datenschutz/
 
