@@ -1,104 +1,112 @@
-# 💼 BU Microsite – Berufsunfähigkeitsversicherung Magdeburg
+# 🦷 Zahnzusatz Microsite – Zahnzusatzversicherung Magdeburg
 
-Eine moderne, responsive Onepage-Microsite für die **Berufsunfähigkeitsberatung in Magdeburg & Umgebung**.  
-Ziel: Einfache, verständliche Information + direkte Kontaktaufnahme über ein DSGVO-konformes Formular (Web3Forms).
+Eine moderne, responsive Onepage-Microsite für die **Zahnzusatzversicherung in Magdeburg & Umgebung**.  
+Ziel: Interessenten verständlich informieren und eine **DSGVO-konforme Kontaktaufnahme** ermöglichen.
 
 ---
 
 ## 🚀 Projektüberblick
 
-**Live-Demo:** [https://berufsunfaehigkeitsversicherung-magdeburg.de](https://berufsunfaehigkeitsversicherung-magdeburg.de)  
-**Technologien:**  
+**Live-Demo:** https://zahnzusatzversicherung-magdeburg.de
+
+**Technologien**
 - HTML5, CSS3, Vanilla JavaScript  
-- Responsive Design (Mobile-first)  
-- Accessibility & SEO optimiert  
-- Web3Forms API für Formularversand  
-- Hosting via GitHub Pages / Netlify  
+- Mobile-first Responsive Design  
+- Accessibility & On-Page-SEO  
+- Formularversand über **Web3Forms** (kein eigenes Backend)  
+- Hosting via **GitHub Pages** / Netlify
 
 ---
 
 ## 🧩 Verzeichnisstruktur
 
+```text
 /
-├── assets/
-│   ├── css/
-│   │   └── style.css           # Hauptstylesheet
-│   ├── js/
-│   │   └── main.js             # Navigation & Animation-Logik
-│   └── img/                    # Bilder (Hero, OG-Image etc.)
+├─ assets/
+│  ├─ css/
+│  │  └─ style.css                # Hauptstylesheet
+│  ├─ js/
+│  │  └─ main.js                  # Navigation, kleine Interaktionen
+│  └─ img/                        # Bilder, Favicons, OG-Images
 │
-├── kontakt/
-│   └── index.html              # Kontaktformular mit Web3Forms-Integration
+├─ kontakt/
+│  └─ index.html                  # Kontaktformular (Web3Forms-Integration)
 │
-├── impressum/
-│   └── index.html              # Gesetzliche Anbieterkennzeichnung
+├─ impressum/
+│  └─ index.html                  # Anbieterkennzeichnung (TMG)
 │
-├── datenschutz/
-│   └── index.html              # Datenschutzinformationen
+├─ datenschutz/
+│  └─ index.html                  # Datenschutzhinweise (DSGVO)
 │
-└── index.html                  # Hauptseite mit Hero, Info & CTA
+├─ robots.txt                     # Crawling-Regeln + Sitemap-Hinweis
+├─ sitemap.xml                    # XML-Sitemap der Seiten
+├─ 404.html                       # Fehlerseite mit Vollbild-Hero
+└─ index.html                     # Startseite (Hero, Nutzen, CTAs)
+🧠 Features
+🎨 Design
+Reduziertes, vertrauenswürdiges Layout in warmen Erdtönen
 
----
+Typografie mit Inter & Sora
 
-## 🧠 Features
+Hero-Bereich mit CTA, sanfte Scroll-Reveals (.reveal)
 
-### 🎨 Design
-- Modernes, reduziertes Layout mit Fokus auf Lesbarkeit
-- Klare Typografie mit **Inter** & **Sora**
-- Hero-Bereich mit überlagertem Hintergrundbild und Call-to-Action
-- Leichte Scroll-Animationen (`.reveal`-Klassen)
+📱 Responsive
+Mobile-first Grids (.grid-2, .process, .kpi)
 
-### 📱 Responsive
-- Mobile-first umgesetzt
-- Flexible Grid-Systeme (`grid-2`, `process`, `kpi`)
-- Sticky Header + Burger-Navigation
+Sticky Header + Burger-Navigation
 
-### 📬 Kontaktformular
-- Realisiert über **[Web3Forms](https://web3forms.com)**
-- DSGVO-konformer Versand ohne Backend
-- Honeypot-Spamschutz (`.hp`-Feld)
-- Asynchroner Versand via `fetch()` + Live-Statusmeldung
-- Optionale Redirect-Funktion nach erfolgreicher Sendung
+📬 Kontaktformular (Web3Forms)
+DSGVO-konformer Versand ohne Backend
 
-Beispielauszug:
-<form action="https://api.web3forms.com/submit" method="POST">
-  <input type="hidden" name="access_key" value="DEIN_ACCESS_KEY">
-  <input type="hidden" name="subject" value="Neue Anfrage von BU-Magdeburg.de">
-  <input type="hidden" name="email" value="info@deineagentur.de">
-</form>
+Honeypot-Feld gegen Spam (.hp)
 
----
+Asynchrones fetch() + Statusmeldungen
 
-## ⚙️ Lokale Entwicklung
+Optional: Redirect nach Erfolg
 
-1. Repository klonen:
-   git clone https://github.com/DEINUSERNAME/bu-microsite.git
+Mini-Snippet
 
-2. Öffne das Projekt im Editor deiner Wahl.
-3. Starte einen lokalen Server (z. B. mit VS Code Live Server oder npx serve):
-   npx serve .
+js
+Code kopieren
+fetch("https://api.web3forms.com/submit", {
+  method: "POST",
+  body: new FormData(formEl)
+});
+⚙️ Lokale Entwicklung
+bash
+Code kopieren
+# Repo klonen
+git clone https://github.com/DEINUSERNAME/zahnzusatz-magdeburg.git
+cd zahnzusatz-magdeburg
 
-4. Rufe im Browser http://localhost:3000 (oder den angegebenen Port) auf.
+# (Optional) lokalen Server starten
+# Variante A: VS Code Live Server
+# Variante B: npx serve
+npx serve .
 
----
+# Dann im Browser öffnen:
+# http://localhost:3000  (oder Port aus der Konsole)
+🔗 Verlinkung zur BU-Microsite
+Beide Projekte verlinken sich gegenseitig (z. B. im Footer):
 
-## 🧾 Rechtliches
+html
+Code kopieren
+<p>
+  Weitere Beratung:
+  <a href="https://berufsunfähigkeitsversicherung-magdeburg.de/">Berufsunfähigkeitsversicherung</a> |
+  <a href="https://zahnzusatzversicherung-magdeburg.de/">Zahnzusatzversicherung</a>
+</p>
+🧾 Rechtliches
+Impressum & Datenschutz unter /impressum/ und /datenschutz/
 
-- Impressum & Datenschutz separat gepflegt unter /impressum/ und /datenschutz/
-- Inhalte gemäß § 5 TMG / DSGVO
-- Alle Texte, Bilder und Markennamen © Torsten Römer / Dustin Rose
+Inhalte gemäß § 5 TMG / DSGVO
 
----
+© Torsten Römer / Dustin Rose
 
-## 👨‍💻 Entwicklung
+👨‍💻 Entwicklung
+r³webdesign – Dustin Rose
+Fokus auf Performance, Barrierefreiheit und einfache Wartung.
 
-**Technische Umsetzung:**  
-[r³webdesign](https://r3webdesign.de) – Dustin Rose  
-> Fokus auf Performance, Barrierefreiheit und einfache Wartung.
-
----
-
-## 📄 Lizenz
-
-Dieses Projekt ist urheberrechtlich geschützt und **nicht zur kommerziellen Weiterverwendung** freigegeben.  
-Für eigene Anpassungen oder Rebrandings bitte Rücksprache mit dem Entwickler.
+📄 Lizenz
+Dieses Projekt ist urheberrechtlich geschützt und nicht zur kommerziellen Weiterverwendung freigegeben.
+Für Rebrandings oder Weiterverwendung bitte vorher Kontakt aufnehmen.
