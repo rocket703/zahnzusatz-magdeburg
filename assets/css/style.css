@@ -449,3 +449,42 @@ footer a:hover{ color:var(--text); text-decoration:underline; }
   font-size: 0.9rem;
   line-height: 1;
 }
+.about-grid {
+  display: grid;
+  gap: 2rem;
+}
+
+/* Grid-Bereiche definieren (für alle Größen) */
+.about-text--top {
+  grid-area: text-top;
+}
+
+.about-text--bottom {
+  grid-area: text-bottom;
+}
+
+.about-image {
+  grid-area: image;
+}
+
+/* Desktop: Text links, Bild rechts, Bild über beide Zeilen */
+@media (min-width: 768px) {
+  .about-grid {
+    grid-template-columns: 1.5fr 1fr;
+    grid-template-areas:
+      "text-top image"
+      "text-bottom image";
+    align-items: start;
+  }
+}
+
+/* Mobil: oben Text, dann Bild, dann unterer Text */
+@media (max-width: 767px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "text-top"
+      "image"
+      "text-bottom";
+  }
+}
