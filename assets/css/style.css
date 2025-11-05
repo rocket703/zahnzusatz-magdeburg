@@ -2,27 +2,28 @@
 html { color-scheme: light !important; }
 
 :root{
-  /* Farben (Sand/Braun) */
-  --bg:        #F6F1E7;  /* Haupt-Hintergrund */
-  --bg-soft:   #EFE7DA;  /* weichere Sektionen / Hero-Füllung */
+  /* Farben (Zahn/Mint) */
+  --bg:        #F7FCFB;  /* Haupt-Hintergrund – sehr hell, leicht mintig */
+  --bg-soft:   #E6F7F3;  /* weichere Sektionen / Hero-Füllung */
   --surface:   #FFFFFF;  /* Karten, Formularfelder */
 
-  --text:      #2B2A28;  /* sehr dunkles Warmgrau */
-  --text-soft: #5E5A54;  /* dezentes Warmgrau */
+  --text:      #132120;  /* sehr dunkles, leicht kühles Grau */
+  --text-soft: #4D5F5B;  /* dezentes, neutrales Grau */
 
-  --brown-600: #7B5535;  /* Primärbraun */
-  --brown-700: #69472B;  /* Hover */
-  --brown-800: #4A301B;  /* sehr dunkel */
+  /* Primärfarben (Mint, Namen bleiben aus Kompatibilität) */
+  --brown-600: #26B89B;  /* Primär-Mint */
+  --brown-700: #1FA189;  /* Hover */
+  --brown-800: #1A8671;  /* sehr dunkel */
 
   /* Primär-Mapping (ersetzt Blau) */
   --primary:     var(--brown-600);
   --primary-600: var(--brown-700);
 
-  --muted:   #E5DED2;               /* zarte Linie auf Sand */
-  --ring:    rgba(123,85,53,.35);   /* Fokus */
+  --muted:   #D3EDE7;               /* zarte Linie auf Mint-Hintergrund */
+  --ring:    rgba(38,184,155,.38);  /* Fokus */
   --container:1100px;
   --radius:14px;
-  --shadow:0 8px 30px rgba(42,34,26,.08);
+  --shadow:0 8px 30px rgba(9,34,32,.08);
   --header-h:64px;
 }
 @media (min-width:900px){ :root{ --header-h:72px; } }
@@ -87,7 +88,7 @@ header .header-inner{
 }
 #site-nav a:hover, #site-nav a[aria-current="page"]{
   color:var(--text);
-  background:#EFE2CC; /* sanfter Hover auf Sand */
+  background:#D9F3EC; /* sanfter Hover in Mint */
 }
 @media (min-width:900px){
   .nav-toggle{ display:none; }
@@ -96,27 +97,26 @@ header .header-inner{
 }
 
 /* =======================
-   Hero (Bild + warmes Overlay)
+   Hero (Bild + Overlay)
    ======================= */
 .hero{
   position:relative; isolation:isolate;
 
-  /* WICHTIG: Bild mit korrektem Pfad RELATIV ZUR CSS-Datei */
+  /* Gleiches Bild wie BU-Seite zur Wiedererkennung */
   background-image: url("../img/team-4529717_1280.jpg");
   background-size:cover;
   background-position:center;
   background-repeat:no-repeat;
 
-  /* Nur die Farbe getrennt definieren, überschreibt das Bild NICHT */
   background-color: var(--bg-soft);
 
   padding-block:clamp(3rem, 8vw, 6rem);
 }
 
-/* Warmes Overlay für Kontrast – überschreibt das Bild NICHT */
+/* Mint-Overlay für frischen Zahn-Look */
 .hero::before{
   content:""; position:absolute; inset:0; z-index:0;
-  background: linear-gradient(to bottom, rgba(74,48,27,.55), rgba(74,48,27,.35));
+  background: linear-gradient(to bottom, rgba(26,134,113,.52), rgba(26,134,113,.32));
 }
 
 .hero .container{ position:relative; z-index:1; text-align:center; }
@@ -125,11 +125,11 @@ header .header-inner{
   display:inline-block;
   padding:.55rem .95rem;
   border-radius:9999px;
-  background: rgba(74,48,27,.65);
+  background: rgba(26,134,113,.82);
   color:#fff;
   border: 1px solid rgba(255,255,255,.18);
   font-weight:800; letter-spacing:.02em; line-height:1;
-  text-shadow:0 1px 2px rgba(0,0,0,.55);
+  text-shadow:0 1px 2px rgba(0,0,0,.4);
 }
 
 .hero h1{
@@ -143,7 +143,7 @@ header .header-inner{
   hyphens:auto; -webkit-hyphens:auto; overflow-wrap:break-word;
 }
 .hero .hero__subtitle{
-  color:rgba(255,255,255,.92);
+  color:rgba(255,255,255,.95);
   font-size:clamp(.98rem, .94rem + .6vw, 1.06rem);
   line-height:1.55;
   margin-top:.35rem;
@@ -170,18 +170,18 @@ header .header-inner{
 }
 .btn--primary{
   background:var(--primary); color:#fff;
-  box-shadow:0 6px 18px rgba(74,48,27,.18);
+  box-shadow:0 6px 18px rgba(26,134,113,.23);
 }
 .btn--primary:hover{ background:var(--primary-600); transform:translateY(-1px); }
 .btn--primary:focus-visible{ outline:3px solid var(--ring); outline-offset:3px; }
 
 .btn--ghost{
   background:transparent; color:#fff; /* im Hero auf Foto weiß */
-  border:2px solid rgba(255,255,255,.85); box-shadow:none;
+  border:2px solid rgba(255,255,255,.9); box-shadow:none;
 }
 .btn--ghost:hover,.btn--ghost:focus-visible{
   background:rgba(255,255,255,.12);
-  border-color:rgba(255,255,255,.9);
+  border-color:rgba(255,255,255,.95);
   outline:3px solid rgba(255,255,255,.35); outline-offset:2px;
 }
 
@@ -218,9 +218,9 @@ h3{ font-size:clamp(1.05rem, .95rem + 1.3vw, 1.25rem); margin:.2rem 0 .4rem; col
   border:1px solid var(--muted);
   border-radius:var(--radius);
   padding:1rem;
-  box-shadow:0 6px 18px rgba(42,34,26,.06);
+  box-shadow:0 6px 18px rgba(9,34,32,.06);
 }
-.card strong{ display:block; margin-bottom:.4rem; color:#111827; }
+.card strong{ display:block; margin-bottom:.4rem; color:#0f4b40; }
 .card p{ color:var(--text-soft); line-height:1.55; }
 
 /* =======================
@@ -234,10 +234,10 @@ h3{ font-size:clamp(1.05rem, .95rem + 1.3vw, 1.25rem); margin:.2rem 0 .4rem; col
   content:"✔"; position:absolute; left:0; top:.05rem;
   width:1.25rem; height:1.25rem; display:grid; place-items:center;
   font-size:.8rem; color:#fff; background:linear-gradient(135deg, var(--brown-600), var(--brown-700));
-  border-radius:999px; box-shadow:0 4px 12px rgba(74,48,27,.28);
+  border-radius:999px; box-shadow:0 4px 12px rgba(26,134,113,.28);
 }
 
-/* Fehlerliste (roter Kreis mit X) */
+/* Fehlerliste (roter Kreis mit X) – bleibt rot */
 .list-check.list-cross li{
   color: var(--text);
 }
@@ -257,11 +257,11 @@ h3{ font-size:clamp(1.05rem, .95rem + 1.3vw, 1.25rem); margin:.2rem 0 .4rem; col
   border-radius:12px; padding:.9rem 1rem; margin:.75rem 0;
 }
 .faq details[open]{
-  background:#f4e8d3;                /* Sand hell */
-  color:#2f241b;
+  background:#E3F7F2;                /* Mint hell */
+  color:#123631;
 }
-.faq details[open] > summary{ color:#2f241b; }
-.faq details[open] > *:not(summary){ color:#3a2f27; }
+.faq details[open] > summary{ color:#123631; }
+.faq details[open] > *:not(summary){ color:#224843; }
 .faq summary{ cursor:pointer; font-weight:700; color:var(--text); }
 
 /* =======================
@@ -270,7 +270,7 @@ h3{ font-size:clamp(1.05rem, .95rem + 1.3vw, 1.25rem); margin:.2rem 0 .4rem; col
 .cta{
   text-align:center;
   background:
-    linear-gradient(180deg, rgba(174,130,86,.08), rgba(200,162,122,.06)),
+    linear-gradient(180deg, rgba(38,184,155,.10), rgba(26,134,113,.06)),
     var(--bg-soft);
   border-block:1px solid var(--muted);
   padding:clamp(1.8rem, 1.2rem + 2.5vw, 3rem) 0;
@@ -280,12 +280,13 @@ h3{ font-size:clamp(1.05rem, .95rem + 1.3vw, 1.25rem); margin:.2rem 0 .4rem; col
   font-weight:800; letter-spacing:-.01em;
   font-size:clamp(1.6rem, 1.2rem + 2.2vw, 2.2rem);
   line-height:1.2; margin:.2rem 0 .5rem; text-wrap:balance;
+  color:#0f4b40;
 }
 .cta .subtle{ margin:0 auto .9rem; max-width:62ch; line-height:1.6; font-size:clamp(1rem, .95rem + .5vw, 1.1rem); }
 .cta .btn{
   display:inline-flex; min-width:clamp(240px, 60%, 420px);
   justify-content:center; padding:.9rem 1.2rem; border-radius:12px; font-weight:800;
-  box-shadow:0 6px 18px rgba(74,48,27,.18);
+  box-shadow:0 6px 18px rgba(26,134,113,.25);
 }
 @media (max-width:560px){ .cta .btn{ width:100%; min-width:0; } }
 
@@ -301,11 +302,11 @@ input, textarea, select{
   transition:border-color .2s ease, box-shadow .2s ease;
 }
 input::placeholder, textarea::placeholder{ color:color-mix(in oklab, var(--text-soft) 85%, #aaa 15%); }
-input:focus, textarea:focus, select:focus{ border-color:#CBA57E; box-shadow:0 0 0 6px var(--ring); outline:none; }
+input:focus, textarea:focus, select:focus{ border-color:#26B89B; box-shadow:0 0 0 6px var(--ring); outline:none; }
 textarea{ min-height:150px; resize:vertical; }
 
 /* Kontaktkarte/Grids */
-.contact-card{ max-width:880px; margin:0 auto; padding:clamp(1rem, 1.2vw + .8rem, 1.5rem); border-radius:16px; box-shadow:0 8px 24px rgba(42,34,26,.06); background:var(--surface); }
+.contact-card{ max-width:880px; margin:0 auto; padding:clamp(1rem, 1.2vw + .8rem, 1.5rem); border-radius:16px; box-shadow:0 8px 24px rgba(9,34,32,.06); background:var(--surface); }
 .form-grid{ display:grid; gap:1.1rem; grid-template-columns:1fr; }
 @media (min-width:900px){ .form-grid{ grid-template-columns:1fr 1fr; } .field--full{ grid-column:1 / -1; } }
 .consent{ grid-column:1/-1; display:grid; grid-template-columns:24px 1fr; align-items:start; gap:.7rem; }
@@ -386,4 +387,65 @@ footer a:hover{ color:var(--text); text-decoration:underline; }
   border-radius: 6px;       /* optional: weiche Ecken */
   object-fit: contain;
   vertical-align: middle;
+}
+.team-img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+  margin: 0 auto;
+}
+
+/* sorgt dafür, dass die Bild-Spalte auf Desktop schön zentriert wirkt */
+.about-figure {
+  text-align: center;
+}
+.text-link {
+  color: var(--primary);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(38,184,155,.35); /* feine Linie */
+  padding-bottom: 1px;
+}
+
+.text-link:hover,
+.text-link:focus-visible {
+  color: var(--brown-800);
+  border-bottom-color: currentColor;
+}
+.backlink-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.backlink-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  background: color-mix(in oklab, var(--primary) 10%, #ffffff 90%);
+  color: var(--brown-800);
+  border: 1px solid color-mix(in oklab, var(--primary) 35%, #ffffff 65%);
+  transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+.backlink-pill:hover,
+.backlink-pill:focus-visible {
+  background: color-mix(in oklab, var(--primary) 16%, #ffffff 84%);
+  box-shadow: 0 6px 18px rgba(26, 134, 113, 0.16);
+  transform: translateY(-1px);
+}
+
+.backlink-icon {
+  font-size: 0.9rem;
+  line-height: 1;
 }
